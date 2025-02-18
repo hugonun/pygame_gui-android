@@ -1,4 +1,6 @@
+## Pygame GUI for Android
 
+Slightly modified repo that builds on Android.
 
 # Pygame GUI
 A GUI system for pygame CE.
