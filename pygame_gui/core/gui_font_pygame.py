@@ -80,7 +80,6 @@ class GUIFontPygame(IGUIFontInterface):
 
     def render_premul(self, text: str, text_color: Color) -> Surface:
         text_surface = self.__internal_font.render(text, self.antialiased, text_color)
-        text_surface = text_surface.convert_alpha()
         if text_surface.get_width() > 0 and text_surface.get_height() > 0:
             text_surface = text_surface.premul_alpha()
         return text_surface
@@ -90,7 +89,6 @@ class GUIFontPygame(IGUIFontInterface):
         text_surface = pygame.Surface(surf_size, depth=32, flags=pygame.SRCALPHA)
         text_surface.fill((0, 0, 0, 0))
         temp_surf = self.__internal_font.render(text, self.antialiased, text_colour)
-        temp_surf = temp_surf.convert_alpha()
         if temp_surf.get_width() > 0 and temp_surf.get_height() > 0:
             temp_surf = temp_surf.premul_alpha()
             text_surface.blit(temp_surf, (surf_position[0], surf_position[1]-self.__internal_font.get_ascent()),
