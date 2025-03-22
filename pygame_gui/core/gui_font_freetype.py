@@ -65,7 +65,6 @@ class GUIFontFreetype(IGUIFontInterface):
 
     def render_premul(self, text: str, text_color: Color) -> Surface:
         text_surface, text_rect = self.__internal_font.render(text, text_color)
-        text_surface = text_surface.convert_alpha()
         if text_surface.get_width() > 0 and text_surface.get_height() > 0:
             text_surface = text_surface.premul_alpha()
         return text_surface
