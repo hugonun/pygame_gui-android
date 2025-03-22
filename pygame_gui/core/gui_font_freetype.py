@@ -2,6 +2,7 @@ import pygame
 
 from pygame_gui.core.interfaces.gui_font_interface import IGUIFontInterface
 
+import os
 if not "ANDROID_ARGUMENT" in os.environ:
     from pygame.freetype import Font
 from typing import Union, IO, Optional, Dict, Tuple
