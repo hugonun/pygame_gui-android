@@ -93,7 +93,7 @@ class UIImage(UIElement):
         :param new_image: the new image surface to use in the UIImage element.
         :param image_is_alpha_premultiplied: set to True if the image is already in alpha multiplied colour format.
         """
-        image_surface = new_image.convert_alpha()
+        image_surface = new_image
         if not image_is_alpha_premultiplied:
             image_surface = image_surface.premul_alpha()
         if (image_surface.get_width() != self.rect.width or
