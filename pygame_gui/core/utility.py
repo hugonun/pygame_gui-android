@@ -462,14 +462,14 @@ class ImageResource:
             try:
                 with (resources.files(self.location.package) /
                       self.location.resource).open('rb') as open_resource:
-                    self.loaded_surface = pygame.image.load(open_resource).convert_alpha()
+                    self.loaded_surface = pygame.image.load(open_resource)
             except (pygame.error, FileNotFoundError, OSError):
                 error = FileNotFoundError('Unable to load resource with path: ' +
                                           str(self.location))
 
         elif isinstance(self.location, str):
             try:
-                self.loaded_surface = pygame.image.load(self.location).convert_alpha()
+                self.loaded_surface = pygame.image.load(self.location)
             except (pygame.error, FileNotFoundError, OSError):
                 error = FileNotFoundError('Unable to load resource with path: ' +
                                           str(self.location))
